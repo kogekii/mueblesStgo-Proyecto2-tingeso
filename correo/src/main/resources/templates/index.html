@@ -1,0 +1,16 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Test</title>
+</head>
+<body>
+<h1>Correo</h1>
+<form method="post" th:action="@{leercorreo}" enctype="multipart/form-data">
+    <label >
+        <input type="file" class="form-control" name="file">
+    </label>
+    <button class="btn btn-primary" type="submit">agregar</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - '8077:80'
+    environment:
+      - PMA_HOST=db
+    depends_on:
+      - db
+  db:
+    image: mysql:latest
+    ports:
+      - '33060:3306'
+    restart: unless-stopped
+    environment:
+      MYSQL_PASSWORD: kogeki
+      MYSQL_ROOT_PASSWORD: kogeki
+      MYSQL_ALLOW_EMPTY_PASSWORD:
+      MYSQL_RANDOM_ROOT_PASSWORD:
