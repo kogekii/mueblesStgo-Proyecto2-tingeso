@@ -17,11 +17,17 @@ public class CalendarEntity {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int idCalendar;
     @Column(name = "Asistencia")
-    private LocalDate asistenciaDay;
+    private int asistenciaDay;
     @Column(name = "Inasistencia")
-    private LocalDate inasistenciaDay;
+    private int inasistenciaDay;
     @Column(name = "Rut")
     private String rutEmployee;
     @Column(name = "Extras")
     private int extras;
+    @Column(name = "atrazo_10min")
+    private int late_10;
+    @Column(name = "atrazo_25min")
+    private int late_25;
+    @Column(name = "atrazo_45min")
+    private int late_45;
 }

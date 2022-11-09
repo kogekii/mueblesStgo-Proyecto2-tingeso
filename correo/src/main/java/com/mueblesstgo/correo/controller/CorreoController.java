@@ -8,10 +8,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.annotation.security.RolesAllowed;
 import java.util.List;
 
 
 @RestController
+@CrossOrigin("*")
 @RequestMapping
 public class CorreoController {
     @Autowired

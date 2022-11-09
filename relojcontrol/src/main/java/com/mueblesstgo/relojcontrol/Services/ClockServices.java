@@ -37,7 +37,8 @@ public class ClockServices {
     }
 
     public void manageTimeStamp(String[] timestamp){
-        if(findInTime(timestamp[2]) == null){
+        LocalDate date = LocalDate.parse(timestamp[0], formatter);
+        if(findInTime(timestamp[2], date) == null){
             newInTime(timestamp);
         }else{
             newOutTime(timestamp);
@@ -61,8 +62,8 @@ public class ClockServices {
         outTimeStampRepository.save(outtime);
     }
 
-    private InTimeStampEntity findInTime(String rut){
-        return inTimeStampRepository.findByRutEmployee(rut);
+    private InTimeStampEntity findInTime(String rut, LocalDate day){
+        return inTimeStampRepository.findByRutEmployeeAndAndDay(rut, day);
     }
 
     public List<InTimeStampEntity> getAllInTimes(){
@@ -80,5 +81,9 @@ public class ClockServices {
     public int calcularAtrazo(LocalTime time){
         int lateminutes = (time.getHour() - in.getHour())*60 + time.getMinute() - in.getMinute();
         return Math.max(lateminutes, 0);
+    }
+    public void deleteAll(){
+        inTimeStampRepository.deleteAll();
+        outTimeStampRepository.deleteAll();
     }
 }

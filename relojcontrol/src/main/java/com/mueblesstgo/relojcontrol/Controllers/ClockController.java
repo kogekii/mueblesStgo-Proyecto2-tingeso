@@ -14,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/clock")
+@CrossOrigin("*")
 public class ClockController {
     @Autowired
     ClockServices clockServices;
@@ -24,6 +25,7 @@ public class ClockController {
     }
     @PostMapping("/readclock")
     public String leerCorreo(@RequestParam("file") MultipartFile file){
+        clockServices.deleteAll();
         clockServices.readMail(file);
         return "redirect:/clock";
     }

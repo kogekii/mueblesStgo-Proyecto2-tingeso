@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CalendarRepository extends JpaRepository<CalendarEntity, Integer> {
+    public CalendarEntity findByRutEmployee(String rut);
 }
