@@ -1,15 +1,10 @@
 package com.mueblesstgo.correo.controller;
 
-import com.mueblesstgo.correo.entities.EmployeeEntity;
 import com.mueblesstgo.correo.services.CorreoServices;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-
-import javax.annotation.security.RolesAllowed;
-import java.util.List;
 
 
 @RestController

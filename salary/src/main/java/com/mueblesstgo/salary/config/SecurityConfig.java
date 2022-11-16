@@ -1,4 +1,4 @@
-package com.mueblesstgo.correo.Config;
+package com.mueblesstgo.salary.config;
 
 import org.keycloak.adapters.springboot.KeycloakSpringBootConfigResolver;
 import org.keycloak.adapters.springsecurity.KeycloakConfiguration;

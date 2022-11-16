@@ -1,6 +1,7 @@
 import React from "react";
 import SalaryService from "../service/SalaryService";
 import Table from "react-bootstrap/Table";
+import {Navbar} from '../components/navbar'
 class SalaryComponent extends React.Component{
     constructor(){
         super();
@@ -11,11 +12,13 @@ class SalaryComponent extends React.Component{
 
     componentDidMount(){
         SalaryService.getall().then(res => this.setState({salary: res.data}));
+        SalaryService.getsalary("11.234.123-6").then(res=> res.data);
     }
 
     render(){
         return(
             <div>
+                <Navbar/>
             <h1 className="text-center">Salary</h1>
             <Table striped bordered hover variant="dark">
                 <thead>

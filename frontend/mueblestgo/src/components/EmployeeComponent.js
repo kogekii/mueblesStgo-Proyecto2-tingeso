@@ -1,4 +1,6 @@
 import React from "react";
+import {Navbar} from '../components/navbar'
+import axios from "axios";
 import EmployeeService  from "../service/EmployeeService";
 import Table from "react-bootstrap/Table";
 class EmployeeComponent extends React.Component {
@@ -12,9 +14,35 @@ class EmployeeComponent extends React.Component {
         EmployeeService.getAll(localStorage.getItem('token')).then((response) => this.setState({employee:response.data}));
         
     }
+    handleFile(e) {
+        let file = e.target.files[0];
+        this.setState({ file: file });
+      }
+      handleUpload(e) {
+        let file = this.state.file;
+        let formdata = new FormData();
+        formdata.append("file", file);
+        axios({
+          url: "http://localhost:8003/leercorreo",
+          method: "POST",
+          data: formdata,
+        });
+      }
     render(){
         return (
             <div>
+                <Navbar/>
+                <form>
+            <label></label>
+            <input
+              type="file"
+              name="file"
+              onChange={(e) => this.handleFile(e)}
+            ></input>
+            <button type="submit" onClick={(e) => this.handleUpload(e)}>
+              agregar
+            </button>
+          </form>
                 <h1 className="text-center">Employees List</h1>
                 <Table striped bordered hover variant="dark">
                     <thead>

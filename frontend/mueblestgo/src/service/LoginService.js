@@ -1,7 +1,10 @@
 import axios from 'axios';
+import  { Navigate } from 'react-router-dom'
+class LoginService{
 
-class LoginService {
-
+    savetoken = (token)=>{
+      localStorage.setItem('token' ,token)
+    }
     login(user, pass){
         var qs = require('qs');
         return axios.post('http://localhost:8080/realms/mueblesstgo/protocol/openid-connect/token',qs.stringify({
@@ -16,6 +19,7 @@ class LoginService {
 
     logOut(){
         localStorage.setItem('token' ,'')
+        return(<Navigate to="/login"/>)
     }
 }
 

@@ -2,6 +2,7 @@ import React from "react";
 import ClockService from "../service/ClockService";
 import axios from "axios";
 import Table from "react-bootstrap/Table";
+import {Navbar} from '../components/navbar'
 
 class ClockComponent extends React.Component {
   state = {
@@ -35,6 +36,7 @@ class ClockComponent extends React.Component {
   render() {
     return (
       <div className="col">
+        <Navbar/>
         <h1>Control Clock</h1>
         <div>
           <form>

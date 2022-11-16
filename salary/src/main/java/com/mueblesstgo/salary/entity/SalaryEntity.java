@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "Salario")
@@ -23,12 +24,18 @@ public class SalaryEntity {
     private String surnameEmployee;
     @Column(name = "Category")
     private String category;
+    @Column(name = "Hiring")
+    private LocalDate hiringDay;
     @Column(name = "Extra")
     private int extra;
-    @Column(name = "Descuento_Atrazo")
+    @Column(name = "DescuentoAtrazo")
     private int late;
-    @Column(name = "Descuento_Inacistencia")
+    @Column(name = "DescuentoInacistencia")
     private int inasistence;
+    @Column(name = "bonoAntiguedad")
+    private int bonoAntiguedad;
     @Column(name = "BaseSalary")
     private int baseSalary;
+    @Column(name = "FinalSalary")
+    private int finalSalary;
 }

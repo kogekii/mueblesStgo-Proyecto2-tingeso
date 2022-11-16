@@ -4,10 +4,7 @@ import com.mueblesstgo.salary.entity.SalaryEntity;
 import com.mueblesstgo.salary.service.SalaryServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -28,5 +25,10 @@ public class SalaryController {
     public ResponseEntity<List<SalaryEntity>> getAll(){
         List<SalaryEntity> salary = salaryServices.getAll();
         return ResponseEntity.ok(salary);
+    }
+    @GetMapping("/getsalary/{rut}")
+    public ResponseEntity<SalaryEntity> getsalary(@PathVariable("rut") String rut){
+        SalaryEntity salary = salaryServices.findEmployee(rut);
+        return  ResponseEntity.ok(salary);
     }
 }

@@ -1,5 +1,5 @@
 body{
-    background-color: #282c34;
+    background-color: #d8d9db;
 }
 
 h1{
@@ -33,4 +33,100 @@ a:hover{
 #navbar>a>p{
     font-size: 4vh;
     margin-top: 3vh;
+}
+.page{
+    margin: 0;
+    padding: 0;
+ }
+
+ .nopadding {
+    padding: 0 !important;
+    margin: 0 !important;
+ }
+.sidebar{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    left: 0;
+    background: #202123;
+}
+.infobar{
+    width: 100%;
+    height: 18vh;
+    background: #ffffff;
+}
+.sidebar>h1 {
+	color: #ffffff;
+	font-weight: bold;
+    padding-top: 5vh;
+    padding-bottom: 10vh;
+	font-size: 1.6vw;
+    text-align: center;
+}
+
+.infobar>h1{
+    padding-top: 3vh;
+    margin-left: 2vh;
+    color: #202123;
+}
+.sidebar>a {
+	color: #8c8c8d;
+	font-family: "Source Sans 3";
+	font-size: 1.4vw;
+    margin-bottom: 2vh;
+    display: block;
+    text-align: center;
+    
+}
+.icon {
+	width: 24px;
+	height: 24px;
+	background: #d8d9db;
+}
+
+.cartanormal{
+    width: 20vw;
+    height: 25vh;
+    margin: auto;
+    margin-top: 10vh;
+    border-radius: 1vw;
+}
+
+.cartablack{
+    background-color: #202123;
+    width: 40vw;
+    height: 35vh;
+    margin: auto;
+    margin-top: 10vh;
+    border-radius: 1vw;
+}
+
+.cartalarga{
+    background-color: #202123;
+    width: 20vw;
+    height: 35vh;
+    margin: auto;
+    margin-top: 10vh;
+    border-radius: 1vw;
+}
+
+.cartablack>div>h5{
+    font-size: 3vw;
+    color: #ffffff;
+}
+
+.cartablack>div>h1{
+    color: #ffffff;
+    text-align: center;
+}
+
+.cartalarga>div>h5{
+    font-size: 2vw;
+    color: #ffffff;
+    text-align: center;
+}
+
+.cartalarga>div>h1{
+    color: #ffffff;
+    text-align: center;
 }

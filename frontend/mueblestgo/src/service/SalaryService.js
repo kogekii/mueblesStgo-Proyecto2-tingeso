@@ -1,9 +1,13 @@
 import axios from "axios";
 
 class SalaryService{
-    baseUrl = "http://localhost:8080/salary/";
+    baseUrl = "http://localhost:8004/salary/";
     getall(){
         return axios.get(this.baseUrl + "getall");
+    }
+
+    getsalary(rut){
+        return axios.get(this.baseUrl + "getsalary/" + rut);
     }
 }
 

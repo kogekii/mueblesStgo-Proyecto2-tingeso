@@ -26,16 +26,16 @@ public class CalServices {
         calendarRepository.save(day);
     }
     public List<TimeStampModel> getAllInTimes (){
-        TimeStampModel[] times = restTemplate.getForObject("http://localhost:8002/clock/getallintimes", TimeStampModel[].class);
+        TimeStampModel[] times = restTemplate.getForObject("http://mueblesstgo-clock-ms:8002/clock/getallintimes", TimeStampModel[].class);
         return Arrays.asList(times);
     }
     public List<TimeStampModel> getAllOutTimes (){
-        TimeStampModel[] times = restTemplate.getForObject("http://localhost:8002/clock/getallouttimes", TimeStampModel[].class);
+        TimeStampModel[] times = restTemplate.getForObject("http://mueblesstgo-clock-ms:8002/clock/getallouttimes", TimeStampModel[].class);
         return Arrays.asList(times);
     }
     
     public void importEmployees(){
-        EmployeeModel[] employees = restTemplate.getForObject("http://localhost:8003/employee/getall", EmployeeModel[].class);
+        EmployeeModel[] employees = restTemplate.getForObject("http://mueblesstgo-correo-ms:8003/employee/getall", EmployeeModel[].class);
         List<EmployeeModel> employes = Arrays.asList(employees);
         employes.forEach(t -> {
             CalendarEntity cal = new CalendarEntity();
@@ -102,7 +102,7 @@ public class CalServices {
     }
 
     public void validateJustify(){
-        JustifyModel[] justify = restTemplate.getForObject("http://localhost:8003/justify/getall/", JustifyModel[].class);
+        JustifyModel[] justify = restTemplate.getForObject("http://mueblesstgo-correo-ms:8003/justify/getall/", JustifyModel[].class);
         List<JustifyModel> justifys = Arrays.asList(justify);
         justifys.forEach(j ->{
             CalendarEntity cal = findByRut(j.getRutEmployee());
@@ -123,7 +123,7 @@ public class CalServices {
         return feriados;
     }
     public boolean validateExtra(LocalDate day, String rut){
-        ExtraModel extra = restTemplate.getForObject("http://localhost:8003/extra/findextra/" + rut + "/" + day.toString(), ExtraModel.class);
+        ExtraModel extra = restTemplate.getForObject("http://mueblesstgo-correo-ms:8003/extra/findextra/" + rut + "/" + day.toString(), ExtraModel.class);
         return extra != null;
     }
     public List<CalendarEntity> getAll(){
