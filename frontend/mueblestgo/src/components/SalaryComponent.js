@@ -12,7 +12,6 @@ class SalaryComponent extends React.Component{
 
     componentDidMount(){
         SalaryService.getall().then(res => this.setState({salary: res.data}));
-        SalaryService.getsalary("11.234.123-6").then(res=> res.data);
     }
 
     render(){

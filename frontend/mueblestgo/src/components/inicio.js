@@ -10,15 +10,14 @@ class Inicio extends React.Component{
         super();
         this.state = {
             salary:[],
-            employee:"",
             role:localStorage.getItem('role'),
         }
 
     }
     componentDidMount(){
-        SalaryService.getsalary("11.234.123-6").then(res=> {
+        SalaryService.getsalary(localStorage.getItem('rut')).then(res=> {
             this.setState({salary: res.data});
-            this.setState({employee: res.data.nameEmployee});
+            localStorage.setItem('username', res.data.nameEmployee);
         });
     }
 
@@ -29,7 +28,7 @@ class Inicio extends React.Component{
             <Sidebar/>
           </div>
           <div className='col-10 nopadding'>
-            <Infobar name={this.state.employee}/>
+            <Infobar/>
             <div className='row'>
               <div className='col-4 nopadding'>
                 <carta.CardNormal name="Salario Base" value={"$"+this.state.salary.baseSalary} icon="bi bi-cash-stack"/>

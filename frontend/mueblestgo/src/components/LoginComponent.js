@@ -19,6 +19,7 @@ class LoginComponent extends React.Component {
     );
 
     LoginService.savetoken(token);
+    localStorage.setItem('rut', this.state.username);
     this.setState({ username: "" });
     this.setState({ password: "" });
     this.setState({ loged: true });

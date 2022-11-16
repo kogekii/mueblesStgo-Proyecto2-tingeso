@@ -2,10 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 class Infobar extends React.Component{
-    constructor(props){
+    constructor(){
         super();
         this.state = {
-            employee:props.name
+            employee:localStorage.getItem('username')
         }
     }
     render(){

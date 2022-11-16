@@ -5,17 +5,26 @@ import ClockComponent from './components/ClockComponent';
 import EmployeeComponent from './components/EmployeeComponent';
 import SalaryComponent from './components/SalaryComponent';
 import LoginComponent from './components/LoginComponent';
+import React from 'react';
 
-export default function App(){
+export default class App extends React.Component{
+  constructor(){
+    super();
+    this.state={
+      loged:localStorage.getItem('login')
+    }
+  }
+  render(){
     return(
       <div className='App'>
         <Routes>
         <Route path='/login' element={<LoginComponent/>}/>
-          <Route path='/' element={ localStorage.getItem('token') !== ''? <Inicio/>:<Navigate replace to={"/login"} />}/>
+          <Route path='/' element={ this.state.loged !== 'true'? <Inicio/>:<Navigate replace to={"/login"} />}/>
           <Route path='/clock' element={<ClockComponent/>}/>
           <Route path='/employee' element={<EmployeeComponent/>}/>
           <Route path='/salary' element={<SalaryComponent/>}/>
         </Routes>
       </div>
     )
+  }
 }
