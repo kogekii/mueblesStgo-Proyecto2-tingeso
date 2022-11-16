@@ -115,7 +115,7 @@ a:hover{
     color: #ffffff;
 }
 
-.cartablack>div>h1{
+.cartablack>div>h1, .cartalarga>div>h1{
     color: #ffffff;
     text-align: center;
 }
@@ -126,7 +126,15 @@ a:hover{
     text-align: center;
 }
 
-.cartalarga>div>h1{
-    color: #ffffff;
-    text-align: center;
+
+.cartalogin{
+    width: 80vw;
+    height: 70vh;
+    margin: auto;
+    border-radius: 2vw;
+}
+
+.cartalogin>div>h1{
+    font-size: 4vw;
+    color: #202123;
 }

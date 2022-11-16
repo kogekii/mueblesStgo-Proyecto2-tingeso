@@ -4,6 +4,11 @@ class LoginService{
 
     savetoken = (token)=>{
       localStorage.setItem('token' ,token)
+      localStorage.setItem('logeed', true)
+    }
+
+    setRole(){
+        localStorage.setItem('role', "user")
     }
     login(user, pass){
         var qs = require('qs');
@@ -19,6 +24,7 @@ class LoginService{
 
     logOut(){
         localStorage.setItem('token' ,'')
+        localStorage.setItem('logeed', false)
         return(<Navigate to="/login"/>)
     }
 }
