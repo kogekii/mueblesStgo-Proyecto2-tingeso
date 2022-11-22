@@ -1,16 +1,15 @@
 import React from "react";
-// import {Navbar} from '../components/navbar'
-// import LoginService from "../service/LoginService";
 import Sidebar from "./Sidebar";
 import carta from "./CardsComponent";
 import Infobar from "./Infobar";
 import SalaryService from "../service/SalaryService";
+import { Navigate } from "react-router-dom";
 class Inicio extends React.Component{
     constructor(){
         super();
         this.state = {
             salary:[],
-            role:localStorage.getItem('role'),
+            isLogged:localStorage.getItem('isLogged')
         }
 
     }
@@ -19,11 +18,16 @@ class Inicio extends React.Component{
             this.setState({salary: res.data});
             localStorage.setItem('username', res.data.nameEmployee);
         });
+        this.setState({isLogged:localStorage.getItem('isLogged')});
     }
 
     render(){
+      if(this.state.isLogged === "false"){
+        return(<Navigate to="/login"/>)
+      }
         return(
             <div className='row'>
+              {console.log(this.state.isLogged)}
           <div className='col-2 nopadding'>
             <Sidebar/>
           </div>

@@ -18,12 +18,16 @@ h1{
     background-color: #ff9d00;
 }
 a{
+    text-decoration: none;
+}
+.hov{
     border-radius: 5px;
     text-decoration: none;
     color: #f5f1ed;
     padding: auto;
 }
-a:hover{
+
+.hov:hover{
     background-color: #ffffff;
 }
 #navbar{
@@ -55,7 +59,7 @@ a:hover{
     height: 18vh;
     background: #ffffff;
 }
-.sidebar>h1 {
+.sidebar>a>h1 {
 	color: #ffffff;
 	font-weight: bold;
     padding-top: 5vh;

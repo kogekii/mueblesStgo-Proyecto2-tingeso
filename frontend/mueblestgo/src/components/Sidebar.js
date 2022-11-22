@@ -5,10 +5,10 @@ class Sidebar extends React.Component{
     render(){
         return(
             <div className="sidebar" >
-                <h1>MueblesStgo</h1>
-                <Link><i class="bi bi-people-fill"></i> Empleados</Link>
-                <Link><i class="bi bi-clock"></i> Reloj Control</Link>
-                <Link><i class="bi bi-envelope"></i> Correo</Link>
+                <Link to="/"><h1>MueblesStgo</h1></Link>
+                <Link className="hov" to="/employee"><i class="bi bi-people-fill"></i> Empleados</Link>
+                <Link className="hov" to="/clock"><i class="bi bi-clock"></i> Reloj Control</Link>
+                <Link className="hov" to="/salary"><i class="bi bi-envelope"></i> Salario</Link>
             </div>
         )
     }

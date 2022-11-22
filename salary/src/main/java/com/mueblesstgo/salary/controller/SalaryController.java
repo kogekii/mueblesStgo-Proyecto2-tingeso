@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.security.RolesAllowed;
 import java.util.List;
 
 @RestController
@@ -22,11 +23,13 @@ public class SalaryController {
     }
 
     @GetMapping("/getall")
+    @RolesAllowed("admin")
     public ResponseEntity<List<SalaryEntity>> getAll(){
         List<SalaryEntity> salary = salaryServices.getAll();
         return ResponseEntity.ok(salary);
     }
     @GetMapping("/getsalary/{rut}")
+    @RolesAllowed({"employee", "admin"})
     public ResponseEntity<SalaryEntity> getsalary(@PathVariable("rut") String rut){
         SalaryEntity salary = salaryServices.findEmployee(rut);
         return  ResponseEntity.ok(salary);

@@ -32,5 +32,5 @@ function CardLarge(props) {
     </div>
   );
 }
-
-export default {CardNormal, CardLarge, CardBlack};
+const carta = {CardNormal, CardLarge, CardBlack};
+export default carta ;
